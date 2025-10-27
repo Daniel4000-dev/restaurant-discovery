@@ -21,7 +21,7 @@ const mockRestaurants: Restaurant[] = [
   },
 ];
 
-jest.mock('@/src/api/mock-restaurants', () => ({
+jest.mock('@/api/mock-restaurants', () => ({
   searchMockRestaurantsByName: jest.fn(),
 }));
 

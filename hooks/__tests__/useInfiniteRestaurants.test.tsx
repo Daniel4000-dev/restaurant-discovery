@@ -44,7 +44,7 @@ const mockResponseNoMore = {
   hasMore: false,
 };
 
-jest.mock('@/src/api/mock-restaurants', () => ({
+jest.mock('@/api/mock-restaurants', () => ({
   fetchMockRestaurants: jest.fn(),
 }));
 

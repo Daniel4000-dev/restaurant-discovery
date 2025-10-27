@@ -43,6 +43,7 @@ export const RestaurantCard = React.memo<RestaurantCardProps>(({ restaurant, onP
           contentFit="cover"
           transition={200}
           cachePolicy="memory-disk"
+          
         />
         {!restaurant.isOpen && (
           <View style={styles.closedBadge}>
