@@ -17,6 +17,7 @@ import { FilterModal } from '@/components/FilterModal';
 import { RestaurantGrid } from '@/components/RestaurantGrid';
 import { trackUserAction, getPerformanceReport } from '@/utils/analytics';
 import type { Restaurant } from '@/types';
+import { OfflineBanner } from '@/components/common/OfflineBanner';
 
 export function DiscoveryScreen() {
   const { colors } = useTheme();
@@ -118,7 +119,8 @@ export function DiscoveryScreen() {
   const hasSuggestionContent = recentSearches.length > 0 || query.length > 0 || suggestions.length > 0;
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}> {/* relative for absolute child */}
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <OfflineBanner />
       <SearchHeader
         query={query}
         onQueryChange={setQuery}
@@ -137,7 +139,7 @@ export function DiscoveryScreen() {
           onRemoveRecent={handleRemoveRecent}
           onClearRecent={handleClearRecent}
           visible={true} // Internal visible=true since we gate outside
-          testID="suggestions-dropdown" // Debug
+          // testID="suggestions-dropdown" // Debug
         />
       )}
 
