@@ -5,12 +5,15 @@ module.exports = {
   ],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    '!src/**/*.d.ts',
-    '!src/types/**',
-    '!src/mocks/**',
+    '**/*.{ts,tsx}',
+    '!/**/*.d.ts',
+    '!/types/**',
+    '!/mocks/**',
     '!**/__tests__/**',
   ],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/$1',
+  },
   coverageThreshold: {
     global: {
       branches: 80,
